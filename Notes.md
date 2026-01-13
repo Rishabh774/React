@@ -62,3 +62,35 @@ function Counter() {
 }
 
 export default Counter;
+
+
+
+// Two way binding in react
+Two-Way Binding in React (Simple Explanation)
+
+Two-way binding means:
+
+UI → State: When the user types or changes something in the UI, the state updates.
+
+State → UI: When the state changes, the UI updates automatically.
+
+React doesn’t have automatic two-way binding like Angular, but we achieve it manually using controlled components with useState.
+
+import { useState } from "react";
+
+function TwoWayBinding() {
+  const [name, setName] = useState("");
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <p>Your name is: {name}</p>
+    </div>
+  );
+}
+
+export default TwoWayBinding;
